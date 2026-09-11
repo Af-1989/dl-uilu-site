@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DL UILU - doutorlivre.com | Services Professionnels</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-section img {
+            height: 50px;
+            width: auto;
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-main {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #1a3a52;
+        }
+
+        .brand-sub {
+            font-size: 0.75rem;
+            color: #0066cc;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .lang-btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            background: #f0f0f0;
+            color: #333;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: #0066cc;
+            color: white;
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: #e0e0e0;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a3a52 0%, #0066cc 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #ff6b35;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .services {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #1a3a52;
+            margin-bottom: 3rem;
+            font-weight: 700;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #0066cc;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #1a3a52;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: #ff6b35;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-period {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card a {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .service-card a:hover {
+            background: #0052a3;
+        }
+
+        .contact-section {
+            background: #1a3a52;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ff6b35;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #0f2535;
+            color: #aaa;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lang-switcher {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="logo-section">
+            <img src="https://via.placeholder.com/50/1a3a52/FFFFFF?text=HK" alt="HK Services Logo" style="height: 50px; width: auto;">
+            <div class="brand">
+                <div class="brand-main">doutorlivre.com</div>
+                <div class="brand-sub">DL UILU</div>
+            </div>
+        </div>
+        <div class="lang-switcher">
+            <button class="lang-btn active" data-lang="fr">🇫🇷 FR</button>
+            <button class="lang-btn" data-lang="pt">🇦🇴 PT</button>
+        </div>
+    </div>
+</header>
+
+<div class="hero">
+    <div class="hero-container">
+        <h1 data-text="hero-title">Solutions Professionnelles pour Votre Entreprise</h1>
+        <p data-text="hero-subtitle">VoIP • Cybersécurité • Agents IA</p>
+        <button class="cta-button" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
+            Découvrez nos services
+        </button>
+    </div>
+</div>
+
+<section class="services" id="services">
+    <h2 class="section-title" data-text="services-title">Nos Services</h2>
+    
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon">📞</div>
+            <h3 data-text="service1-title">Service VoIP Professionnel</h3>
+            <p data-text="service1-desc">Infrastructure Issabel + monitoring Zabbix pour des communications fiables et sécurisées</p>
+            <div class="price">50€ / 50.000 Kz</div>
+            <div class="price-period" data-text="price-period1">par mois / par ligne</div>
+            <a href="https://wa.me/33751400496?text=Bonjour%20je%20suis%20intéressé%20par%20le%20service%20VoIP">Nous contacter</a>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🔐</div>
+            <h3 data-text="service2-title">Lab Cybersécurité Complet</h3>
+            <p data-text="service2-desc">Accès complet aux environnements Kali, Windows Server, Wazuh, pfSense pour formations et tests</p>
+            <div class="price">99€ / 50.000 Kz</div>
+            <div class="price-period" data-text="price-period2">par mois / par utilisateur</div>
+            <a href="https://wa.me/33751400496?text=Bonjour%20je%20suis%20intéressé%20par%20le%20Lab%20Cybersécurité">Nous contacter</a>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🤖</div>
+            <h3 data-text="service3-title">Agents IA Personnalisés</h3>
+            <p data-text="service3-desc">Création et maintenance d'agents IA avec OpenFlow et Claude Code pour automatiser vos processus</p>
+            <div class="price">300€ / 150.000 Kz</div>
+            <div class="price-period" data-text="price-period3">création + 99€/mois maintenance</div>
+            <a href="https://wa.me/33751400496?text=Bonjour%20je%20suis%20intéressé%20par%20les%20Agents%20IA">Nous contacter</a>
+        </div>
+    </div>
+</section>
+
+<div class="contact-section">
+    <h2 data-text="contact-title">Nous Contacter</h2>
+    <div class="contact-info">
+        <div class="contact-item">
+            <strong data-text="contact-france">📍 France</strong>
+            <a href="https://wa.me/33751400496">+33 7 51 40 04 96</a>
+            <a href="https://wa.me/33695286889">+33 6 95 28 68 89</a>
+        </div>
+        <div class="contact-item">
+            <strong data-text="contact-angola">📍 Angola</strong>
+            <a href="https://wa.me/244949931565">+244 94 993 15 65</a>
+            <a href="https://wa.me/244923796318">+244 92 379 63 18</a>
+            <a href="https://wa.me/244931497620">+244 93 149 76 20</a>
+        </div>
+        <div class="contact-item" style="margin-top: 2rem;">
+            <strong data-text="contact-email">✉️ Email</strong>
+            <a href="mailto:contact@doutorlivre.com">contact@doutorlivre.com</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 DL UILU - doutorlivre.com | Tous droits réservés</p>
+    <p data-text="footer-text">Solutions professionnelles pour PME en France et Angola</p>
+</footer>
+
+<script>
+const translations = {
+    fr: {
+        'hero-title': 'Solutions Professionnelles pour Votre Entreprise',
+        'hero-subtitle': 'VoIP • Cybersécurité • Agents IA',
+        'services-title': 'Nos Services',
+        'service1-title': 'Service VoIP Professionnel',
+        'service1-desc': 'Infrastructure Issabel + monitoring Zabbix pour des communications fiables et sécurisées',
+        'service2-title': 'Lab Cybersécurité Complet',
+        'service2-desc': 'Accès complet aux environnements Kali, Windows Server, Wazuh, pfSense pour formations et tests',
+        'service3-title': 'Agents IA Personnalisés',
+        'service3-desc': 'Création et maintenance d\'agents IA avec OpenFlow et Claude Code pour automatiser vos processus',
+        'price-period1': 'par mois / par ligne',
+        'price-period2': 'par mois / par utilisateur',
+        'price-period3': 'création + 99€/mois maintenance',
+        'contact-title': 'Nous Contacter',
+        'contact-france': '📍 France',
+        'contact-angola': '📍 Angola',
+        'contact-email': '✉️ Email',
+        'footer-text': 'Solutions professionnelles pour PME en France et Angola'
+    },
+    pt: {
+        'hero-title': 'Soluções Profissionais para Sua Empresa',
+        'hero-subtitle': 'VoIP • Cibersegurança • Agentes IA',
+        'services-title': 'Nossos Serviços',
+        'service1-title': 'Serviço VoIP Profissional',
+        'service1-desc': 'Infraestrutura Issabel + monitoramento Zabbix para comunicações confiáveis e seguras',
+        'service2-title': 'Lab Cibersegurança Completo',
+        'service2-desc': 'Acesso completo aos ambientes Kali, Windows Server, Wazuh, pfSense para treinamentos e testes',
+        'service3-title': 'Agentes IA Personalizados',
+        'service3-desc': 'Criação e manutenção de agentes IA com OpenFlow e Claude Code para automatizar seus processos',
+        'price-period1': 'por mês / por linha',
+        'price-period2': 'por mês / por usuário',
+        'price-period3': 'criação + 150.000 Kz/mês manutenção',
+        'contact-title': 'Entre em Contato',
+        'contact-france': '📍 França',
+        'contact-angola': '📍 Angola',
+        'contact-email': '✉️ Email',
+        'footer-text': 'Soluções profissionais para PME na França e Angola'
+    }
+};
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const lang = this.dataset.lang;
+        
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        document.querySelectorAll('[data-text]').forEach(el => {
+            const key = el.getAttribute('data-text');
+            if (translations[lang][key]) {
+                el.textContent = translations[lang][key];
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>
