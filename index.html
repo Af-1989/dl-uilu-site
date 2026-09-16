@@ -137,7 +137,32 @@
         .hero-container {
             max-width: 900px;
             margin: 0 auto;
-        }
+        }.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.hero-content > div:first-child {
+    flex: 1;
+}
+
+.hero-visual {
+    flex: 1;
+    min-height: 420px;
+}
+
+.hero-image-placeholder {
+    width: 100%;
+    height: 420px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+}
 
         .hero h1 {
             font-size: 2.5rem;
@@ -443,15 +468,42 @@
 
 <div class="hero">
     <div class="hero-container">
-        <h1 data-text="hero-title">Solutions IT, Cybersécurité & IA pour votre entreprise</h1>
-        <p data-text="hero-subtitle">Infrastructure • Cybersécurité • Monitoring • Agents IA • VoIP</p>
-        <p data-text="hero-desc">Des solutions professionnelles adaptées aux centres de formation, TPE et indépendants en France, Angola et à distance.</p>
+        <div class="hero-content">
+            <div class="hero-label">VOTRE PARTENAIRE TECHNOLOGIQUE</div>
 
-        <button class="cta-button" data-text="hero-button" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
-            Découvrir nos services
-        </button>
+            <h1 data-text="hero-title">
+                Solutions IT, Cybersécurité & IA pour votre entreprise
+            </h1>
+
+            <p data-text="hero-subtitle">
+                Infrastructure • Cybersécurité • Monitoring • Agents IA • VoIP
+            </p>
+
+            <p data-text="hero-desc">
+                Des solutions professionnelles adaptées aux centres de formation, TPE et indépendants en France, Angola et à distance.
+            </p>
+
+            <button class="cta-button" data-text="hero-button"
+                onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">
+                Découvrir nos services →
+            </button>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-image-placeholder"></div>
+        </div>
     </div>
 </div>
+    
+        
+        
+    
+
+        
+            
+        
+    
+
     
         
         
