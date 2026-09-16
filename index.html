@@ -65,11 +65,41 @@
             letter-spacing: 1px;
         }
 
-        .lang-switcher {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
+         .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: #1a3a52;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.main-nav a:hover {
+    color: #0066cc;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-contact-btn {
+    background: #0066ff;
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+}
+            
+            
+            
+        
 
         .lang-btn {
             padding: 0.6rem 1.2rem;
@@ -371,18 +401,45 @@
 <header>
     <div class="header-container">
         <div class="logo-section">
-            
             <div class="brand">
                 <div class="brand-main">doutorlivre.com</div>
                 <div class="brand-sub">DL UILU</div>
             </div>
         </div>
-        <div class="lang-switcher">
-            <button class="lang-btn active" data-lang="fr">🇫🇷 FR</button>
-            <button class="lang-btn" data-lang="pt">🇦🇴 PT</button>
+
+        <nav class="main-nav">
+            <a href="#" data-text="nav-home">Accueil</a>
+            <a href="#services" data-text="nav-services">Services</a>
+            <a href="#about" data-text="nav-about">À propos</a>
+            <a href="#contact" data-text="nav-contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="fr">FR</button>
+                <button class="lang-btn" data-lang="pt">PT</button>
+            </div>
+
+            <a href="#contact" class="header-contact-btn" data-text="nav-contact-btn">
+                ✈ Nous contacter
+            </a>
         </div>
     </div>
 </header>
+    
+        
+            
+            
+            
+                
+            
+        
+        
+            
+            
+        
+    
+
 
 <div class="hero">
     <div class="hero-container">
