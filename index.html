@@ -332,11 +332,11 @@
             grid-template-columns: repeat(5, 1fr);
             gap: 1rem;
             margin-bottom: 4rem;
-            align-items: start;
+            align-items: stretch;
         }
 
         .service-card {
-            min-height: 250px;
+            min-height: 220px;
             display: flex;
             flex-direction: column;
             background: white;
@@ -616,8 +616,8 @@
             <div class="service-icon">📞</div>
             <h3 data-text="service1-title">Téléphonie IP & VoIP Professionnelle</h3>
             <p data-text="service1-desc">Téléphonie IP professionnelle avec Issabel, supervision Zabbix et solutions adaptées aux entreprises, centres de formation et indépendants.</p>
-            <div class="price">50€ / 50.000 Kz</div>
-            <div class="price-period" data-text="price-period1">par mois / par ligne</div>
+            <div class="price" data-text="service1-price">Sur devis</div>
+            
             <a href="https://wa.me/33751400496?text=Bonjour%20je%20suis%20intéressé%20par%20le%20service%20VoIP" data-text="contact-button">Nous contacter</a>
         </div>
 
@@ -625,8 +625,8 @@
             <div class="service-icon">🔐</div>
             <h3 data-text="service2-title">Lab Cybersécurité Complet</h3>
             <p data-text="service2-desc">Accès complet aux environnements Kali, Windows Server, Wazuh, pfSense pour formations et tests</p>
-            <div class="price">99€ / 50.000 Kz</div>
-            <div class="price-period" data-text="price-period2">par mois / par utilisateur</div>
+            <div class="price" data-text="service2-price">Sur devis</div>
+            
             <a href="https://wa.me/33751400496?text=Bonjour%20je%20suis%20intéressé%20par%20le%20Lab%20Cybersécurité"data-text="contact-button">Nous contacter</a>
         </div>
 
@@ -634,8 +634,8 @@
             <div class="service-icon">🤖</div>
             <h3 data-text="service3-title">Agents IA Personnalisés</h3>
             <p data-text="service3-desc">Création et maintenance d'agents IA avec OpenFlow et Claude Code pour automatiser vos processus</p>
-            <div class="price">300€ / 150.000 Kz</div>
-            <div class="price-period" data-text="price-period3">création + 99€/mois maintenance</div>
+            <div class="price" data-text="service3-price">Sur devis</div>
+            
             <a href="https://wa.me/33751400496?text=Bonjour%20je%20suis%20intéressé%20par%20les%20Agents%20IA" data-text="contact-button">Nous contacter</a>
         </div>
         <div class="service-card">
@@ -754,7 +754,7 @@ const translations = {
         'price-period2': 'par mois / par utilisateur',
         'price-period3': 'création + 99€/mois maintenance',
         'contact-title': 'Nous Contacter',
-        'contact-button': 'Nous contacter',
+        'contact-button': 'Demander un devis',
         'contact-france': '📍 France',
         'contact-angola': '📍 Angola',
         'contact-email': '✉️ Email',
@@ -797,7 +797,7 @@ pt: {        'hero-title': 'Soluções Profissionais para Sua Empresa',
         'price-period2': 'por mês / por usuário',
         'price-period3': 'criação + 150.000 Kz/mês manutenção',
         'contact-title': 'Entre em Contato',
-        'contact-button': 'Contacte-nos',
+        'contact-button': 'Solicitar orçamento',
         'contact-france': '📍 França',
         'contact-angola': '📍 Angola',
         'contact-email': '✉️ Email',
