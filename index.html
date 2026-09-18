@@ -512,6 +512,42 @@ justify-content: center;
         }
 
         @media (max-width: 768px) {
+                html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    header,
+    .header-container,
+    .hero,
+    .services,
+    .demo-section,
+    .contact-section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .header-container {
+        margin: 0;
+    }
+
+    .hero {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .services-grid {
+        width: 100%;
+        max-width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        width: 100%;
+        max-width: 100%;
+    }
                 /* ===== VERSION MOBILE / ANDROID ===== */
 
     .header-container {
