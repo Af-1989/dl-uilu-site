@@ -1186,15 +1186,14 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 });
 </script>
 <script>
-document.getElementById('whatsapp-contact-btn').addEventListener('click', function(e) {
-    e.preventDefault();
-
-    const isPT = document.querySelector('.lang-btn[data-lang="pt"]').classList.contains('active');
+document.getElementById('whatsapp-contact-btn').onclick = function () {
+    const activeLang = document.querySelector('.lang-btn.active');
+    const lang = activeLang ? activeLang.dataset.lang : 'fr';
 
     let phone;
     let message;
 
-    if (isPT) {
+    if (lang === 'pt') {
         phone = '244949931565';
         message = 'Olá, entrei em contacto através do site DL UILU SERVICES e gostaria de obter mais informações sobre os vossos serviços.';
     } else {
@@ -1202,9 +1201,9 @@ document.getElementById('whatsapp-contact-btn').addEventListener('click', functi
         message = 'Bonjour, je vous contacte depuis le site DL UILU SERVICES et je souhaiterais obtenir plus d’informations sur vos services.';
     }
 
-    const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
-    window.open(url, '_blank');
-});
+    this.href = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
+    this.target = '_blank';
+};
 </script>
 </body>
 </html>
