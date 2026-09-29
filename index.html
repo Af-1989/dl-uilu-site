@@ -1043,7 +1043,7 @@ section h2 {
     <p data-text="demo-desc">
         Demandez une démonstration personnalisée de nos solutions VoIP, Cybersécurité et Agents IA.
     </p>
-    <a href="https://wa.me/33751400496" class="cta-button" data-text="demo-button">
+    <a href="#" class="cta-button" id="demo-whatsapp-btn" data-text="demo-button">
         Demander une démonstration
     </a>
 </section>    
@@ -1231,5 +1231,27 @@ document.querySelectorAll('.service-whatsapp-btn').forEach(function(btn) {
     };
 });
 </script>
+ <script>
+document.getElementById('demo-whatsapp-btn').onclick = function(e) {
+    e.preventDefault();
+
+    const activeLang = document.querySelector('.lang-btn.active');
+    const lang = activeLang ? activeLang.dataset.lang : 'fr';
+
+    let phone;
+    let message;
+
+    if (lang === 'pt') {
+        phone = '244949931565';
+        message = 'Olá, gostaria de solicitar uma demonstração das soluções da DL UILU SERVICES. Gostaria de falar convosco para agendar uma apresentação.';
+    } else {
+        phone = '33751400496';
+        message = 'Bonjour, je souhaite demander une démonstration des solutions DL UILU SERVICES. Je voudrais échanger avec vous afin de planifier une présentation.';
+    }
+
+    const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
+    window.open(url, '_blank');
+};
+</script>   
 </body>
 </html>
