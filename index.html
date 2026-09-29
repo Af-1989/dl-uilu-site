@@ -966,7 +966,7 @@ section h2 {
             <p data-text="service1-desc">Téléphonie IP professionnelle avec Issabel, supervision Zabbix et solutions adaptées aux entreprises, centres de formation et indépendants.</p>
             <div class="price" data-text="service1-price">Sur devis</div>
             
-            <a href="https://wa.me/33751400496?text=Bonjour%20je%20suis%20intéressé%20par%20le%20service%20VoIP" data-text="contact-button">Nous contacter</a>
+            <a href="#" class="service-whatsapp-btn" data-service-fr="le service VoIP" data-service-pt="o serviço VoIP" data-text="contact-button">Nous contacter</a>
         </div>
 
         <div class="service-card">
@@ -975,7 +975,7 @@ section h2 {
             <p data-text="service2-desc">Accès complet aux environnements Kali, Windows Server, Wazuh, pfSense pour formations et tests</p>
             <div class="price" data-text="service2-price">Sur devis</div>
             
-            <a href="https://wa.me/33751400496?text=Bonjour%20je%20suis%20intéressé%20par%20le%20Lab%20Cybersécurité"data-text="contact-button">Nous contacter</a>
+            <a href="#" class="service-whatsapp-btn" data-service-fr="le Lab Cybersécurité" data-service-pt="o Lab de Cibersegurança" data-text="contact-button">Nous contacter</a>
         </div>
 
         <div class="service-card">
@@ -984,14 +984,14 @@ section h2 {
             <p data-text="service3-desc">Création et maintenance d'agents IA avec OpenFlow et Claude Code pour automatiser vos processus</p>
             <div class="price" data-text="service3-price">Sur devis</div>
             
-            <a href="https://wa.me/33751400496?text=Bonjour%20je%20suis%20intéressé%20par%20les%20Agents%20IA" data-text="contact-button">Nous contacter</a>
+            <a href="#" class="service-whatsapp-btn" data-service-fr="les Agents IA" data-service-pt="os Agentes IA" data-text="contact-button">Nous contacter</a>
         </div>
         <div class="service-card">
     <div class="service-icon">🖥️</div>
     <h3 data-text="service4-title">Infrastructure IT</h3>
     <p data-text="service4-desc">Serveurs, réseaux, virtualisation et solutions cloud adaptées à votre entreprise.</p>
             <div class="price" data-text="service4-price">Sur devis</div>
-    <a href="https://wa.me/33751400496?text=Bonjour%20je%20suis%20intéressé%20par%20Infrastructure%20IT" data-text="contact-button">Nous contacter</a>
+    <a href="#" class="service-whatsapp-btn" data-service-fr="l'Infrastructure IT" data-service-pt="a Infraestrutura IT" data-text="contact-button">Nous contacter</a>
 </div>
 
 <div class="service-card">
@@ -999,7 +999,7 @@ section h2 {
     <h3 data-text="service5-title">Supervision &amp; Monitoring</h3>
     <p data-text="service5-desc">Supervision de vos infrastructures avec Zabbix, Grafana et Centreon.</p>
     <div class="price" data-text="service5-price">Sur devis</div>
-    <a href="https://wa.me/33751400496?text=Bonjour%20je%20suis%20intéressé%20par%20Supervision%20et%20Monitoring" data-text="contact-button">Nous contacter</a>
+    <a href="#" class="service-whatsapp-btn" data-service-fr="la Supervision et le Monitoring" data-service-pt="a Supervisão e Monitorização" data-text="contact-button">Nous contacter</a>
 </div>
     </div>
 </section>
@@ -1204,6 +1204,32 @@ document.getElementById('whatsapp-contact-btn').onclick = function () {
     this.href = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
     this.target = '_blank';
 };
+</script>
+    <script>
+document.querySelectorAll('.service-whatsapp-btn').forEach(function(btn) {
+    btn.onclick = function(e) {
+        e.preventDefault();
+
+        const activeLang = document.querySelector('.lang-btn.active');
+        const lang = activeLang ? activeLang.dataset.lang : 'fr';
+
+        let phone;
+        let message;
+
+        if (lang === 'pt') {
+            phone = '244949931565';
+            const service = this.dataset.servicePt;
+            message = 'Olá, estou interessado em ' + service + ' e gostaria de obter mais informações.';
+        } else {
+            phone = '33751400496';
+            const service = this.dataset.serviceFr;
+            message = 'Bonjour, je suis intéressé par ' + service + ' et je souhaiterais obtenir plus d’informations.';
+        }
+
+        const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
+        window.open(url, '_blank');
+    };
+});
 </script>
 </body>
 </html>
