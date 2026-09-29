@@ -886,7 +886,7 @@ section h2 {
                 <button class="lang-btn" data-lang="pt">PT</button>
             </div>
 
-            <a href="#contact" class="header-contact-btn">
+            <a href="#" class="header-contact-btn" id="whatsapp-contact-btn">
      <span data-text="nav-contact-btn">Nous contacter</span>
 </a>
                 
@@ -1185,6 +1185,26 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     });
 });
 </script>
+<script>
+document.getElementById('whatsapp-contact-btn').addEventListener('click', function(e) {
+    e.preventDefault();
 
+    const isPT = document.querySelector('.lang-btn[data-lang="pt"]').classList.contains('active');
+
+    let phone;
+    let message;
+
+    if (isPT) {
+        phone = '244949931565';
+        message = 'Olá, entrei em contacto através do site DL UILU SERVICES e gostaria de obter mais informações sobre os vossos serviços.';
+    } else {
+        phone = '33751400496';
+        message = 'Bonjour, je vous contacte depuis le site DL UILU SERVICES et je souhaiterais obtenir plus d’informations sur vos services.';
+    }
+
+    const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(message);
+    window.open(url, '_blank');
+});
+</script>
 </body>
 </html>
