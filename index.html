@@ -859,8 +859,91 @@ section h2 {
     line-height: 1.2;
 }
 }
-            
-    </style>
+
+            }
+}
+
+/*
+}
+
+
+ 
+
+<style>
+/* ===== DEMONSTRATIONS DL UILU ===== */
+
+#demo-options {
+    display: none;
+    margin-top: 35px;
+    padding-top: 10px;
+}
+
+#demo-options h3 {
+    text-align: center;
+    font-size: 24px;
+    color: #123b5d;
+    margin-bottom: 25px;
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.demo-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 24px 18px;
+    text-align: center;
+    text-decoration: none;
+    color: #1f2937;
+    font-weight: 600;
+    font-size: 16px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+}
+
+.demo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.demo-icon {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.demo-card span {
+    display: block;
+}
+
+/* Tablette */
+@media (max-width: 900px) {
+    .demo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Téléphone */
+@media (max-width: 600px) {
+    .demo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-card {
+        width: 100%;
+    }
+
+    #demo-options h3 {
+        font-size: 21px;
+    }
+}
+</style>
 </head>
 <body>
 
@@ -1047,29 +1130,40 @@ section h2 {
         Demander une démonstration
     </a>
 
-    <div id="demo-options" style="display:none;">
+<div id="demo-options" style="display:none;">
+
     <h3>Choisissez une démonstration</h3>
 
-    <a href="DLUILU_Demo_Telefonia_IP_Issabel.mp4">
-        📞 Téléphonie IP / Issabel
-    </a>
+    <div class="demo-grid">
 
-    <a href="#">
-        🛡️ Cybersécurité
-    </a>
+        <a href="DLUILU_Demo_Telefonia_IP_Issabel.mp4" class="demo-card">
+            <span class="demo-icon">📞</span>
+            <span>Téléphonie IP / Issabel</span>
+        </a>
 
-    <a href="#">
-        📊 Monitoring & Supervision
-    </a>
+        <a href="#" class="demo-card">
+            <span class="demo-icon">🛡️</span>
+            <span>Cybersécurité</span>
+        </a>
 
-    <a href="#">
-        🖥️ Infrastructure & Data Center
-    </a>
+        <a href="#" class="demo-card">
+            <span class="demo-icon">📊</span>
+            <span>Monitoring &amp; Supervision</span>
+        </a>
 
-    <a href="#">
-        🤖 Agents IA
-    </a>
-</div>
+        <a href="#" class="demo-card">
+            <span class="demo-icon">🖥️</span>
+            <span>Infrastructure &amp; Data Center</span>
+        </a>
+
+        <a href="#" class="demo-card">
+            <span class="demo-icon">🤖</span>
+            <span>Agents IA</span>
+        </a>
+
+    </div>
+
+</div>   
 </section>    
 <div class="contact-section">
     <h2 data-text="contact-title">Nous Contacter</h2>
