@@ -1043,9 +1043,33 @@ section h2 {
     <p data-text="demo-desc">
         Demandez une démonstration personnalisée de nos solutions VoIP, Cybersécurité et Agents IA.
     </p>
-    <a href="DLUILU_Demo_Telefonia_IP_Issabel.mp4" class="cta-button" id="demo-whatsapp-btn" data-text="demo-button">
+    <a href="#" class="cta-button" id="demo-menu-btn" data-text="demo-button">
         Demander une démonstration
     </a>
+
+    <div id="demo-options" style="display:none;">
+    <h3>Choisissez une démonstration</h3>
+
+    <a href="DLUILU_Demo_Telefonia_IP_Issabel.mp4">
+        📞 Téléphonie IP / Issabel
+    </a>
+
+    <a href="#">
+        🛡️ Cybersécurité
+    </a>
+
+    <a href="#">
+        📊 Monitoring & Supervision
+    </a>
+
+    <a href="#">
+        🖥️ Infrastructure & Data Center
+    </a>
+
+    <a href="#">
+        🤖 Agents IA
+    </a>
+</div>
 </section>    
 <div class="contact-section">
     <h2 data-text="contact-title">Nous Contacter</h2>
@@ -1231,6 +1255,22 @@ document.querySelectorAll('.service-whatsapp-btn').forEach(function(btn) {
     };
 });
 </script>
-   
+   <script>
+document.getElementById('demo-menu-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const demoOptions = document.getElementById('demo-options');
+
+    if (demoOptions.style.display === 'none') {
+        demoOptions.style.display = 'block';
+        demoOptions.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+    } else {
+        demoOptions.style.display = 'none';
+    }
+});
+</script>
 </body>
 </html>
