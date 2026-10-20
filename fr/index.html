@@ -962,7 +962,7 @@ section h2 {
         <nav class="main-nav">
             <a href="#" data-text="nav-home">Accueil</a>
             <a href="#services" data-text="nav-services">Services</a>
-            <a href="#about-team" data-text="nav-about" onclick="document.getElementById('about-team-details').open = true">À propos</a>
+            <a href="#about-team" data-text="nav-about" onclick="var d=document.getElementById('about-team-details'); d.style.display='block'; d.open=true;">À propos</a>
             <a href="#contact" data-text="nav-contact">Contact</a>
         </nav>
 
@@ -1123,7 +1123,7 @@ section h2 {
         </div>
 
     </div>
-        <details id="about-team-details" style="max-width: 950px; margin: 30px auto;">
+        <details id="about-team-details" style="max-width: 950px; margin: 30px auto; display: none;">
             <summary>Présentation de notre équipe</summary>
             <p>DL UILU SERVICES dispose d'une équipe technique réunissant des compétences et des formations académiques acquises en France et en Angola.</p>
             <p>Notre responsable technique est titulaire d'un diplôme de Technicien Supérieur en Systèmes et Réseaux Informatiques, obtenu en France.</p>
